@@ -8,6 +8,7 @@ var database = firebase.database();
 $("#addTrain").on("click", function(event) {
   event.preventDefault();
   writeNewPost();
+  onDataAdded();
 });
 
 // Write
@@ -57,3 +58,11 @@ function loadPosts() {
 }
 
 loadPosts();
+
+// On child added
+// TODO: Add a timestamp and sort data by time
+function onDataAdded() {
+  database.ref("/schedules").once("child_added", function(snap) {
+    console.log(snap.val());
+  });
+}

@@ -19,7 +19,7 @@ function writeNewPost() {
   var start = $("#starttimeinput").val();
   var freq = $("#frequencyinput").val();
 
-  // A post entry.
+  // A post entry.  with a key and a value  this is an object
   var newTrain = {
     train: train,
     destination: destination,

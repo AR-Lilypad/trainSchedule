@@ -1,0 +1,22 @@
+
+
+body  {
+        background-image: url("../images/urban-phila-topo.jpg");
+        background-size: 100%; 
+}
+
+.jumbotron  {
+    margin-top: 5px;
+    background-image: url("../images/locomotive.jpg");
+    background-size: 100%; 
+   
+}
+
+.lead {
+    /* padding-left: 20px; */
+    line-height: .5em; 
+}
+
+.t-container {
+    background-color: #fff;
+}

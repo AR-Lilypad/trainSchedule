@@ -6,17 +6,32 @@ body  {
 }
 
 .jumbotron  {
-    margin-top: 5px;
+    margin-top: 6px;
     background-image: url("../images/locomotive.jpg");
     background-size: 100%; 
    
 }
 
-.lead {
-    /* padding-left: 20px; */
-    line-height: .5em; 
+.dispaly .lead {
+    font-weight: 700;
+    line-height: .4em; 
+}
+
+.panel {
+    background-color: #c6b890;
+}
+
+.sample {
+    font-style: italic;
+    color: gray;
 }
 
 .t-container {
     background-color: #fff;
+}
+
+.addTrainHeading {
+    color: #cfaf86;
+    font-weight: 700;
+    line-height: .3em;
 }

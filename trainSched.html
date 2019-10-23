@@ -25,14 +25,20 @@
                 <p class="lead pl-5 text-white"> Unless otherwise noted all lines originate from Center City Philadelphia.</p>
             </div>
         </div>
+        <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title pl-3 text-black-50"><strong>Current Train Schedule | Current Time <span id="current-time"></span></strong></h3>
+            </div>
         <!-- Schedules for a sample of trains -->
         <div class="t-container">
         <table class="table table-striped" id="train-table">
             <thead>
+                <tr class="sample1"><p class="font-italic pl-3">Sample Schedule</p></tr>
                 <tr>
                     <th scope="col">Train Name</th>
                     <th scope="col">Destination</th>
-                    <th scope="col">Frequency (minutes)</th>
+                    <th scope="col">First Train Time</th>
+                    <th scope="col">Frequency (min.)</th>
                     <th scope="col">Next Arrival</th>
                     <th scope="col">Minutes Away</th> 
                 </tr>
@@ -43,13 +49,15 @@
                     <td>Philadelphia Int'l Airport</td>
                     <td>05:05</td>
                     <td>30</td>
-                    <td></td>
+                    <td class="sample">tbd</td>
+                    <td class="sample">tbd</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">Add your own train below:</th>
                     <td> </td>
                     <td> </td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -61,7 +69,7 @@
             <div class="col-md-12">
                 <!-- add trains area -->
                 <div class="card">
-                    <div class="card-header">Add Train</div>
+                    <div class="card-header"><p class="addTrainHeading">Add Train</p></div>
                     <div class="card-body">
 
 
@@ -82,11 +90,6 @@
                                 <label for="frequencyinput">Frequency (min)</label>
                                 <input type="text" class="form-control" id="frequencyinput"
                                     placeholder="Time between trains">
-                            </div>
-                            <div class="form-group">
-                                <label for="minutesAway">Minutes Away</label>
-                                <input type="text" class="form-control" id="minutesAway"
-                                    placeholder="Next Train is at:">
                             </div>
                             <button class="btn btn-primary float-right" id="addTrain">Submit</button>
                         </form>

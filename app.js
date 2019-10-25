@@ -1,6 +1,6 @@
 
 //script tags are in the html
-
+$(document).ready(function() {
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCgH3cfv5HqDAiZ-piyhsJLm5GXEeDZQHM",
@@ -18,9 +18,6 @@ firebase.initializeApp(firebaseConfig);
 //ask the firebase app to get database and store it in variable
 var database = firebase.database();
 
-// initiate moment.js
-var time = moment();
-
 // submit button to add trains
 $("#addTrain").on("click", function (event) {
     event.preventDefault();
@@ -36,7 +33,7 @@ $("#addTrain").on("click", function (event) {
         train: trainName,
         destination: finalDestination,
         start: firstTrainTime,
-        freq: frequency
+        frequent: frequency
     };
 
     // pushes the train info to the database
@@ -46,7 +43,7 @@ $("#addTrain").on("click", function (event) {
     console.log(newTrain.train);
     console.log(newTrain.destination);
     console.log(newTrain.start);
-    console.log(newTrain.freq);
+    console.log(newTrain.frequent);
 
 
     // clear the text boxes
@@ -63,7 +60,7 @@ database.ref().on("child_added", function (childSnapshot) {
     var trainName = childSnapshot.val().train;
     var finalDestination = childSnapshot.val().destination;
     var firstTrainTime = childSnapshot.val().start;
-    var frequency = childSnapshot.val().freq;
+    var frequency = childSnapshot.val().frequent;
     console.log(childSnapshot.val());
 
     // train info

@@ -9,78 +9,99 @@
     <!-- bootstrap Styles-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href ="assets/css/customStyle.css">
 
-    <title>Train Schedule</title>
-</head>
-
-<body>
-    <!-- Train Schedule -->
-    <div class="container">
-        <!-- Jumbotron -->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="j-container">
-                <h1 class="display-4 pl-5 text-white">PHL Train Schedule</h1><br>
-                <p class="lead pl-5 text-white">Find your regional rail service schedule here. </p> 
-                <p class="lead pl-5 text-white"> Unless otherwise noted all lines originate from Center City Philadelphia.</p>
-            </div>
-        </div>
-        <div class="panel">
-            <div class="panel-heading">
-              <h3 class="panel-title pl-3 text-black-50"><strong>Current Train Schedule | Current Time <span id="current-time"></span></strong></h3>
-            </div>
+        
+        <title>Train Schedule</title>
+    </head>
+    
+    <body>
+        <!-- Train Schedule -->
+        <div class="container">
+            <!-- Jumbotron -->
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">PHL Train Schedule</h1>
+                    <p class="lead">Find your regional rail service schedule here. Unless otherwise noted, all lines
+                        originate
+                        from Center City Philadelhia.</p>
+                    </div>
+                </div>
         <!-- Schedules for a sample of trains -->
-        <div class="t-container">
         <table class="table table-striped" id="train-table">
             <thead>
-                <tr class="sample1"><p class="font-italic pl-3">Sample Schedule</p></tr>
                 <tr>
                     <th scope="col">Train Name</th>
                     <th scope="col">Destination</th>
-                    <th scope="col">First Train Time</th>
-                    <th scope="col">Frequency (min.)</th>
+                    <th scope="col">Frequency (minutes)</th>
                     <th scope="col">Next Arrival</th>
-                    <th scope="col">Minutes Away</th> 
+                    <th scope="col">Minutes Away</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">Airport Line</th>
-                    <td>Philadelphia Int'l Airport</td>
-                    <td>05:05</td>
-                    <td>30</td>
-                    <td class="sample">tbd</td>
-                    <td class="sample">tbd</td>
-
+                    <td>Philadelphia Int'l Airport all gates</td>
+                    <td>:30</td>
+                    <td></td>
+                    <td></td>
+                    
                 </tr>
                 <tr>
-                    <td> </td>
-                    <td> </td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">Chestnut Hill East</th>
+                    <td>Chestnut Hill East</td>
+                    <td>:60</td>
                     <td></td>
                     <td></td>
                 </tr>
+                <tr>
+                    <th scope="row">Glenside Combined</th>
+                    <td>University City</td>
+                    <td>:20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Paoli/Thorndale Line</th>
+                    <td>Thorndale</td>
+                    <td>:30</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">West Trenton Line</th>
+                    <td>Trenton, NJ</td>
+                    <td>:60</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Wilmington/Newark Line</th>
+                    <td>Wilmington, DE</td>
+                    <td>:60</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
             </tbody>
         </table>
-    </div>
-
+        
         <div class="row">
             <div class="col-md-12">
                 <!-- add trains area -->
                 <div class="card">
-                    <div class="card-header"><p class="addTrainHeading">Add Train</p></div>
+                    <div class="card-header">Add Train</div>
                     <div class="card-body">
 
-
-                        <form id="train-form">
+                        
+                        <form>
                             <div class="form-group">
                                 <label for="traininput">Train Name</label>
                                 <input type="text" class="form-control" id="traininput" placeholder="Train Name">
                             </div>
                             <div class="form-group">
                                 <label for="destinationinput">Train Destination</label>
-                                <input type="text" class="form-control" id="destinationinput" placeholder="Destination">
+                                <input type="text" class="form-control" id="destinationinput"
+                                placeholder="Destination">
                             </div>
                             <div class="form-group">
                                 <label for="starttimeinput">First Train Time (HH:mm - military time)</label>
@@ -88,52 +109,46 @@
                             </div>
                             <div class="form-group">
                                 <label for="frequencyinput">Frequency (min)</label>
-                                <input type="text" class="form-control" id="frequencyinput"
-                                    placeholder="Time between trains">
+                                <input type="text" class="form-control" id="frequency"
+                                placeholder="Time between trains">
                             </div>
                             <button class="btn btn-primary float-right" id="addTrain">Submit</button>
                         </form>
-
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <!-- bootstrap scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Firebase  -->
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <script>
-        // My web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyCgH3cfv5HqDAiZ-piyhsJLm5GXEeDZQHM",
-            authDomain: "train-schedule-e42fc.firebaseapp.com",
-            databaseURL: "https://train-schedule-e42fc.firebaseio.com",
-            projectId: "train-schedule-e42fc",
-            storageBucket: "train-schedule-e42fc.appspot.com",
-            messagingSenderId: "517499868382",
-            appId: "1:517499868382:web:0921e25e3461eb65781e4f"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
-    <!-- moment.js script -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <!-- javascript file -->
+    
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    
+    <!-- moments js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
 
